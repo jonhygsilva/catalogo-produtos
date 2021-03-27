@@ -1,16 +1,14 @@
 package com.catalogo.produtos.Catalogo.de.produtos.dto;
 
 import com.catalogo.produtos.Catalogo.de.produtos.models.Product;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductDto {

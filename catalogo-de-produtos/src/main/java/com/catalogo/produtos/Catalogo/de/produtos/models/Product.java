@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 
 @Table
 @Entity
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor

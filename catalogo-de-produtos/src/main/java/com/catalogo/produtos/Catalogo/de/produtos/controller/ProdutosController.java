@@ -55,17 +55,12 @@ public class ProdutosController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Product> delete(@PathVariable Long id) {
-        try {
-            var product = productService.findById(id);
-            if (product == null) {
-                return ResponseEntity.notFound().build();
-            }
-            productService.delete(product);
-            return ResponseEntity.ok().build();
-
-        } catch (NoSuchElementException e) {
+        var product = productService.findById(id);
+        if (product == null) {
             return ResponseEntity.notFound().build();
         }
+        productService.delete(product);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("search")
