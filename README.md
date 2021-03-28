@@ -163,13 +163,13 @@ Retorno com produtos filtrados/buscados:
   {
     "id": "id produto 1",
     "name": "nome",
-    "description": "descriÃ§Ã£o",
+    "description": "descrição",
     "price": <preco>
   },
   {
     "id": "id produto 2",
     "name": "nome",
-    "description": "descriÃ§Ã£o",
+    "description": "descrição",
     "price": <preco>
   }
 ]
@@ -183,6 +183,6 @@ Retorno vazio:
 
 #### DELETE /products/\{id\}
 
-Esse endpoint deve deletar um registro de produto na base de dados. Caso encontre o produto filtrando pelo *id* entÃ£o deve deletar e retornar um HTTP 200. Se o *id* passado nÃ£o foi localizado deve retornar um HTTP 404
+Esse endpoint deve deletar um registro de produto na base de dados. Caso encontre o produto filtrando pelo *id* então deve deletar e retornar um HTTP 200. Se o *id* passado não foi localizado deve retornar um HTTP 404
 
 
