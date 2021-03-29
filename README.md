@@ -63,8 +63,6 @@ Se houver alguma falha tratável de cadastro será retornado o código 400 e o b
   }
 ```
 
-Caso ocorra algum no servidor será retorndo o código 500.
-
 #### PUT /products/{id}: Atualiza um produto
 Esse endpoint deve atualizar um produto baseado no {id} passado via path param. Antes de alterar, deve ser consultada a base de dados pelo id, se o produto não for localizado então devolver um HTTP 404 ao cliente. Se localizar o produto, então os campos name, description e price devem ser atualizados conforme recebidos no body da requisição.
 

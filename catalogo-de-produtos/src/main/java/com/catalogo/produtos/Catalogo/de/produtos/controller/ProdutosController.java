@@ -66,9 +66,6 @@ public class ProdutosController {
     @GetMapping("search")
     public ResponseEntity<List<Product>> search(@RequestParam(required = false) BigDecimal min_price, @RequestParam(required = false) BigDecimal max_price, @RequestParam(required = false) String q) {
         List<Product> products = productService.search(min_price, max_price, q);
-       if (products.isEmpty()) {
-           return ResponseEntity.notFound().build();
-       }
        return ResponseEntity.ok().body(products);
     }
 }
