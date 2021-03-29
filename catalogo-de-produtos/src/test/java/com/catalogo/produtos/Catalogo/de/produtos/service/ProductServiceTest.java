@@ -75,15 +75,15 @@ public class ProductServiceTest {
 
     @Test
     public void searchTest() {
-        Long min_price = 355L;
-        Long max_price = null;
+        BigDecimal min_price = BigDecimal.valueOf(355);
+        BigDecimal max_price = null;
         String q = null;
         List<Product> productTestOne = productService.search(min_price, max_price, q);
         Assert.assertEquals(productTestOne.size(), 1);
         assertEquals(products.get(0).getName(), productTestOne.get(0).getName());
 
         min_price = null;
-        max_price = 355L;
+        max_price = BigDecimal.valueOf(355L);
         List<Product> productTestTwo = productService.search(min_price, max_price, q);
         Assert.assertEquals(productTestTwo.size(), 1);
         assertEquals(products.get(1).getName(), productTestTwo.get(0).getName());
@@ -95,14 +95,14 @@ public class ProductServiceTest {
         Assert.assertEquals(productTestThree.size(), 1);
         assertEquals(products.get(1).getName(), productTestThree.get(0).getName());
 
-        min_price = 20L;
-        max_price = 10000L;
+        min_price = BigDecimal.valueOf(20L);
+        max_price = BigDecimal.valueOf(10000L);
         q = null;
         List<Product> productTestFour = productService.search(min_price, max_price, q);
         Assert.assertEquals(productTestFour.size(), 2);
 
-        min_price = 20L;
-        max_price = 10000L;;
+        min_price = BigDecimal.valueOf(20L);
+        max_price = BigDecimal.valueOf(10000L);;
         q = "Product 2";
         List<Product> productTestFive = productService.search(min_price, max_price, q);
         Assert.assertEquals(productTestFive.size(), 1);

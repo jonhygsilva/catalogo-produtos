@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -63,7 +64,7 @@ public class ProdutosController {
     }
 
     @GetMapping("search")
-    public ResponseEntity<List<Product>> search(@RequestParam Long min_price,@RequestParam Long max_price, @RequestParam String q) {
+    public ResponseEntity<List<Product>> search(@RequestParam(required = false) BigDecimal min_price, @RequestParam(required = false) BigDecimal max_price, @RequestParam(required = false) String q) {
         List<Product> products = productService.search(min_price, max_price, q);
        if (products.isEmpty()) {
            return ResponseEntity.notFound().build();

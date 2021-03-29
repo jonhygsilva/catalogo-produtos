@@ -8,6 +8,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.Predicate;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public List<Product> search(Long min_price, Long max_price, String q) {
+    public List<Product> search(BigDecimal min_price, BigDecimal max_price, String q) {
         return  productRepository.findAll((Specification<Product>) (root, criteriaQuery, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
             if (min_price != null) {
