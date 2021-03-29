@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("products")
